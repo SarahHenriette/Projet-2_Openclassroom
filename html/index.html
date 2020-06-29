@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Location de vélo</title>
+    <script src="https://kit.fontawesome.com/b061b9ec97.js"></script>
+    <link href="https://fonts.googleapis.com/css?family=Cabin|Darker+Grotesque|Questrial|Source+Code+Pro&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Cabin|Darker+Grotesque|Source+Code+Pro&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Cabin|Source+Code+Pro&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Source+Code+Pro&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Anton|Teko&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.5.1/dist/leaflet.css"
+    integrity="sha512-xwE/Az9zrjBIphAcBb3F6JVqxf46+CDLwfLMHloNu6KEQCAWi6HcDUbeOfBIptF7tcCzusKFjFw2yuvEpDL9wQ=="
+    crossorigin=""/>
+    <link rel="stylesheet" href="../css/locationVelo.css"/>
+    
+</head>
+<body>
+  
+
+    <!----DIAPORAMA----->
+<div id="banniere"></div>
+<section id="diaporama">
+    <header id="entete">
+        
+        <img src="img/bike.png" id="imageVelo">
+    
+        <p>VELIB CERGY-PONTOISE</p>
+    </header>
+    
+    <div class="images_diapo">
+            <div id="image1" class="number"></div>
+            <img src="img/diapo1.png" class="img_taille">
+    </div>
+    <div class="images_diapo">
+            <div class="number"></div>
+             <img src="img/diapo2.png" class="img_taille">
+    </div>
+    <div class="images_diapo">
+            <div class="number"></div>
+            <img src="img/diapo3.png" class="img_taille">
+    </div>
+    <div class="images_diapo">
+            <div class="number"></div>
+            <img src="img/diapo4.png" class="img_taille">
+    </div>
+    <div class="images_diapo">
+            <div class="number"></div>
+            <img src="img/diapo5.png" class="img_taille"> 
+    </div>
+    <div class="images_diapo">
+        <div class="number"></div>
+        <img src="img/diapo6.png" class="img_taille"> 
+</div>
+    <a id="bouton_reculer" ><i class="fas fa-backward"></i></a>
+    <a id="bouton_avancer"><i class="fas fa-forward"></i></a>
+    <a id="bouton_pause"><i class="fas fa-pause"></i></a>
+    <a id="bouton_play"><i class="fas fa-play"></i></i></a>
+    
+</section>
+
+
+
+
+
+
+
+<div id="boutons_diapo">
+
+
+
+ 
+    
+</div>
+
+    <!----CARTE DES VELOS / PANNEAU RESERVATION----->
+<section id="reservationVelo">
+
+    <div id="cartePanneau" >
+        <div id="carte"></div>
+  
+        <div id="panneau">
+
+
+            <div id="infoStation">
+
+                <p id="indiqueSelectMarqueur">Selectionne un Marqueur</p>
+
+                <div id="infos">
+                <p id="nomStation"><img src="img/address.png" alt="logoAddress"  id="logoAdress"/><span class="infos" id="contenantNomStation" ></span></p>
+                <p id="adress"><span class="infos" id="contenantAdress" ></span></p>
+                <p id="etat"> Etat de la station : <span class="infos" id="contenantEtat"></span></p>
+                <p id="velibLibre">Nombre de vélib disponible : <span class="infos" id="contenantVelibLibre"></span></p>
+                <p id="PlaceDispo">Places disponible : <span class="infos" id="contenantPlaceDispo"></span></p>
+                </div>
+
+            </div>
+
+            <form id="form">
+              
+                <div id="contenantInputs">
+                    <!--<label for ="nom" id="nom">Nom</label>-->
+                        <input type="text" name="nom" id="nom" value=""  placeholder="Entrer votre Nom" class="inputForm" required/>
+                        <input type="text" name="prenom" placeholder="Entrer votre Prenom" id="prenom"class="inputForm" required/>
+                </div>
+           
+
+                <div id="reservation">
+                   <input type="button" value="Valider" id="boutonReserver">
+                 <!--<input type="button" value="Suite" id="boutonSuite">-->
+                <!--<i class="far fa-check-square" id="iconBooking"></i>-->
+                </div>
+
+
+                <div id="contenantCanvas">
+                    <canvas id="canvas" ></canvas>
+               
+
+                    <div id="boutonSCanvas">
+                        <input type="button" value="reset" id="reset">
+                        <input type="submit" value="Réserver" id="deuxiemeBoutonReserver" name="reset">
+                        
+
+                    </div>
+
+                </div>
+               
+            </form>
+           
+        
+        </div><!--panneau-->
+
+    </div>
+<div id="reservationValide">
+    
+
+  
+        
+
+        <div id="validation">
+            <p id="texteReservationValide">RESERVATION VALIDEE</p>
+            <p id="nomReserv"></p>
+            <p >Vous avez reserver un vélo à la station : </p>
+            <p id ="stationReserv">
+                <span id="nameStation"></span>
+                <span id="addressStation"></span>
+            </p>
+
+        </div>
+        <div id="expiration">
+            <p id="reservationExpire">Votre reservation expire dans : </p>
+            <!--<p id="timer"></p>-->
+            <p id="compteur"><span id="minutes"></span>:<span id="secondes"></span></p>
+             <input type="button" value="Annuler" id="Annuler">
+        </div>
+
+ 
+</div>
+</section>
+
+                
+
+<script src="https://unpkg.com/leaflet@1.5.1/dist/leaflet.js"
+integrity="sha512-GffPMF3RvMeYyc1LWMHtK8EbPv0iNZ8/oTtHPx9/cc2ILxQ+u905qIwdpULaqDkyBKgOaB57QTMg7ztg8Jm2Og=="
+crossorigin=""></script>
+
+<script type="text/javascript" src="../js/compteur.js"></script>
+<script type="text/javascript" src="../js/stockage.js"></script>
+<script type="text/javascript" src="../js/formulaire.js"></script>
+<script type="text/javascript" src="../js/canvas.js"></script>
+<script type="text/javascript" src="../js/marqueur.js"></script>
+<script type="text/javascript" src="../js/donnee.js"></script>
+<script type="text/javascript" src="../js/map.js"></script>
+<script type="text/javascript" src="../js/diaporama.js"></script>
+<script type="text/javascript" src="../js/locationVelo.js"></script>
+
+</body>
+</html>

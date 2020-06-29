@@ -1,0 +1,575 @@
+body{
+
+}
+
+#banniere{
+    width: 100%;
+    height: 500px;
+    background-color:#ecf6db;
+    position: relative;
+    max-width: 2000px;
+    margin: 0 auto;
+    top: 0;
+    left: 0;
+}
+
+
+/********************************************************SECTION DIAPORAMA********************************************************************************/
+
+
+/***entete qui est juste au dessus du diaporama***/
+#entete{
+    width: 100%;
+    height: 50px;
+    
+    margin: auto;
+    margin-bottom: -10px;
+    display:flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    font-family:'Questrial', sans-serif;
+    top:0;
+    position: absolute;
+    z-index: 1;
+    background-color: rgba(225,225,225,0.4);
+}
+
+
+#imageVelo{
+   
+    height: 50px;
+}
+
+/*****************Diaporam************************/
+#diaporama {
+    width: 40%;
+    max-width: 1200px;
+    height: 350px;
+
+
+    margin:  auto;
+    position: absolute;
+    overflow: hidden;
+    top:10px;
+    left: 0;
+    right: 0;
+  
+}
+
+
+.images_diapo{
+
+ 
+    width: 100%;
+    height: 350px;
+    background-color: #93ca70;
+ 
+     
+     animation: fadein 0.5s;
+     -moz-animation: fadein 0.5s; /* Firefox */
+     -webkit-animation: fadein 0.5s; /* Safari et Chrome */
+     -o-animation: fadein 0.5s; /* Opera */
+   
+ }
+/*Animation pour les images du diapo**/
+ @keyframes fadein {
+    from {
+        opacity:0;
+    }
+    to {
+        opacity:1;
+    }
+}
+@-moz-keyframes fadein { /* sur Firefox */
+    from {
+        opacity:0;
+    }
+    to {
+        opacity:1;
+    }
+}
+@-webkit-keyframes fadein { /* sur Safari et Chrome */
+    from {
+        opacity:0;
+    }
+    to {
+        opacity:1;
+    }
+}
+@-o-keyframes fadein { /* sur Opera */
+    from {
+        opacity:0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+.img_taille{
+    height: 350px;
+    position: absolute;
+    margin: 0 auto;
+      left: 0;
+      right: 0;
+    }
+    
+
+
+
+#bouton_avancer, #bouton_reculer{
+    position: absolute;
+    color: #FFFFFF;
+    z-index: 1;
+    top: 50%;
+    padding: 10px 10px;
+    margin: auto;
+}
+    
+#bouton_avancer{
+    right: 25px;
+}
+    
+#bouton_reculer{
+    left: 25px;
+}
+    
+#bouton_pause{
+    position: absolute;
+    bottom: 25px;
+    color: #FFFFFF;
+    right: 10px;
+    padding: 10px 30px;
+    background:rgba(225,225,225,0.4);
+}
+    
+#bouton_play{
+    
+    position: absolute;
+    bottom: 25px;
+    color: #FFFFFF;
+    right: 10px;
+    padding: 10px 30px;
+    display:none;
+}
+    
+    
+#bouton_avancer:hover, #bouton_reculer:hover,#bouton_pause:hover,#bouton_play{
+    background:rgba(0,0,0,0.6);
+       
+}
+    
+    
+
+
+/********************************************************SECTION RESERVATION VELO********************************************************************************/
+#reservationVelo{
+position: absolute;
+    height: 600px;
+    width: 90%;
+    margin: 0 auto;
+    /* margin-top: -92px; */
+    left: 0;
+    right: 0;
+    top: 363px;
+}
+
+#cartePanneau{
+    
+    max-width: 2000px;
+    margin: 35px auto;
+    
+    display:flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+
+}
+
+
+#carte{
+    width: 100%;
+   
+    height: 600px;
+
+}
+
+#panneau{
+    width: 60%;
+    height: 600px;
+    margin-left:1%;
+    display: none;
+    flex-direction: column;
+}
+
+
+#indiqueSelectMarqueur{
+    height: 50px;
+    width: 200px;
+    background-color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/***************PARTIE INFORMATION DES STATIONS******************/
+#infoStation{
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-family:'Questrial', sans-serif;
+   padding: 0 15px;
+    font-size: 30x;
+   border: #93ca70 solid 2px;
+  background-color: #FFF;
+
+}
+
+#logoAdress {
+    width: 50px;
+    height: 50px;
+    padding-bottom: 25px;
+}
+
+#nomStation{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    
+}
+
+#infosReservations{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    width: 90%;
+    height: 600px;
+
+    margin: 0 auto;
+    font-family: 'Questrial', sans-serif;
+    font-size: 22px;
+    text-align: center;
+    
+   
+  
+}
+
+
+#infosReservations div{
+  
+    width: 500px;
+    height: 500px;
+    /*margin: 50px;*/
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+}
+
+
+#infos{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    display: none;
+}
+
+/***************PARTIE FORMULAIRE******************/
+
+#form{
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+     background-color: #93ca70;
+ }
+ .inputForm{
+     
+     margin: 4px 5px;
+     
+     height: 35px;
+ }
+ #boutonSuite{
+     width: 420px;
+     height: 35px;
+     font-family: 'Questrial', sans-serif;
+     font-size: 22px;
+ }
+ 
+
+ 
+#reservation{
+    margin-top: 10px;
+    position: relative;
+}
+
+.inputForm{
+    width: 150px;
+    
+}
+
+#contenantInputs{
+    display: flex; 
+    flex-direction: row;
+}
+
+/***************PARTIE CANVAS******************/
+
+#canvas{
+
+    width: 400px;
+    height: 175px;
+     background-color: azure;
+     margin: 15px auto;
+ }
+
+ 
+#contenantCanvas{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+   display: none;
+
+}
+
+/*************BOUTONS**************/
+
+#boutonReserver:hover{
+
+    color: #FFF;
+}
+
+#reset,#Annuler, #boutonReserver, #deuxiemeBoutonReserver{
+    width: 200px;
+    height: 50px;
+    text-align: center;
+    font-family: 'Questrial', sans-serif;
+    font-size: 22px;
+    background-color: #6a9c41;
+    border:none;
+}
+
+
+#reset:hover,#Annuler:hover, #boutonReserver:hover, #deuxiemeBoutonReserver:hover{
+    background-color: #04561d;
+    color: #FFF; 
+}
+
+
+
+#Annuler{
+    margin-bottom: 10px;
+    background-color: #679a3d;
+}
+
+#Annuler:hover{
+    margin-bottom: 10px;
+   
+    color: #FFF; 
+}
+#boutonSCanvas{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+
+ #deuxiemeBoutonReserver{
+    display: none;
+    margin-left:15px;
+ }
+
+/***************PARTIE VALIDATION DE RESERVATION******************/
+
+#reservationValide{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin: 0 auto;
+    max-width: 2000px;
+    display: none;
+}
+
+
+#validation,#expiration{
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Questrial', sans-serif;
+    
+}
+
+
+
+#validation{
+    border: #93ca70 solid 6px;
+    background-color: #FFF;
+    width:50%;
+}
+
+#validation p{
+    margin: 0.3em;
+
+}
+
+#expiration{
+    background-color:#93ca70;
+    width:30%;
+}
+
+
+#texteReservationValide{
+    font-size: 24px;
+}
+
+#compteur{
+    font-size: 40px;
+    margin: 5px 0;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/**********************************************************MEDIA QUERIES************************************************************************/
+
+
+@media screen and (max-width:1025px)
+{
+    #diaporama {
+        width: 50%;    
+    }
+
+    
+#cartePanneau{
+   
+    flex-direction: column;
+
+}
+
+
+#carte{
+    width: 90%;
+   
+
+}
+
+#panneau{
+    width: 90%;
+    margin-top: 25px;
+}
+
+
+}
+
+
+@media screen and (max-width:415px){
+    #diaporama {
+        width: 95%;    
+    }
+
+    
+
+#infos{
+    padding:20px;
+}
+
+p{
+    text-align: center;
+}
+#carte{
+    width: 100%;
+   height: 400px;
+
+}
+
+#panneau{
+    width: 100%;
+    margin-top: 25px;
+}
+
+.inputForm{
+    width: 200px;
+    
+}
+
+#contenantInputs{
+    display: flex; 
+    flex-direction: column;
+}
+
+
+
+#canvas{
+
+    width: 300px;
+    height: 150px;
+
+ }
+
+ #form{
+     padding: 15px;
+ }
+ 
+#reset,#deuxiemeBoutonReserver{
+    width: 130px;
+    height: 50px;
+
+}
+
+
+#reservationValide{
+   
+    flex-direction: column;
+
+}
+
+#validation{
+ 
+    width:99%;
+    border:  #93ca70 solid 2px;
+    padding: 20px 0;
+}
+
+
+#expiration{
+
+    width:100%;
+}
+
+
+}
+
+
+
+
+@media screen and (max-width:325px){
+    #diaporama {
+        height:280px ;
+    }
+
+    .img_taille{
+        height: 275px;
+  
+        }
+        
+
+}
